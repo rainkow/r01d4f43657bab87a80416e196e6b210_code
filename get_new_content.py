@@ -1,7 +1,6 @@
 # coding=utf-8
 import MySQLdb, urllib, urllib2, re, sys, urlparse, hashlib, datetime, string, time, socket
 import socket
-from bs4 import BeautifulSoup
 
 socket.setdefaulttimeout(30)
 
@@ -18,12 +17,11 @@ def get_increased_contents(cur_jp, cur_local, conn_jp, conn_local):
 #DB connection
 conn_jp=MySQLdb.connect(host='106.186.24.246',user='root',passwd='eysXpFxw0iH01hyhyTLY',db='fangyuan',port=3306, charset='utf8')
 #for aliyun
-conn_local=MySQLdb.connect(host='127.0.0.1',user='root',passwd='dbczp8tc8ls7pj28/8848yangmao_hao',db='fangyuan',port=3306, charset='utf8')
+conn_local=MySQLdb.connect(host='rdsej2ayuubemfr.mysql.rds.aliyuncs.com',user='dbczp8tc8ls7pj28',passwd='8848yangmao_hao',db='diaoxb',port=3306, charset='utf8')
 
 #for my computer
 #conn_local=MySQLdb.connect(host='127.0.0.1',user='root',passwd='',db='fangyuan',port=3306, charset='utf8')
 
-#获取连接上的字典cursor，注意获取的方法，使用字典cursor取得结果集
 cur_jp = conn_jp.cursor(MySQLdb.cursors.DictCursor)
 cur_local = conn_local.cursor(MySQLdb.cursors.DictCursor)
 
