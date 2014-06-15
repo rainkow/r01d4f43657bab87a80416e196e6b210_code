@@ -12,7 +12,8 @@ debug = 1
 
 #parse_page
 #each_url = "http://www.smzdm.com/youhui/483995"
-each_url = "http://www.mgpyh.com/recommend/6134047/"
+#each_url = "http://www.mgpyh.com/recommend/6134047/"
+each_url = "http://www.zhizhizhi.com/p/311149/"
 domain = urlparse.urlparse(each_url).hostname
 
 request = urllib2.Request(each_url)

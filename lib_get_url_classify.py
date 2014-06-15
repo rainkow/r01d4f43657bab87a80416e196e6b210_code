@@ -28,6 +28,7 @@ global_map = {
 classify_rules = {
 'www.smzdm.com': ['div', ['class','crumbsCate']], 
 'www.mgpyh.com':['ol', ['class', 'breadcrumb']], 
+'www.zhizhizhi.com':['span', ['typeof', 'v:Breadcrumb']], 
 }
 
 #key = domain ;  first elements = tag in site ; snd elem = map in global
@@ -40,6 +41,9 @@ classify_map = {
 'www.mgpyh.com':[
 ['相机、数码配件', '电脑数码'], 
 ], 
+'www.zhizhizhi.com':[
+['居家百货', '家居家装'],
+], 
 }
 
 def get_url_classify(page_html, domain):
@@ -49,4 +53,4 @@ def get_url_classify(page_html, domain):
     for classify_name in classify_map[domain]:
         if mypos_str.find(classify_name[0])!= -1:
             return global_map[classify_name[1]]
-    return -1
+    return 0
